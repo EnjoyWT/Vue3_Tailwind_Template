@@ -1,11 +1,7 @@
-// UserService.js
-import axios from '../utils/request';
+import { POST } from '@/utils/request'
 
+const API = {
+  homeService: '/api/getuser'
+}
 
-const homeService = {
-  getUser(id) {
-    return axios.get(`/api/getuser`,{"ddd":id});
-  }
-};
-
-export default homeService;
+export const homeService = (data = {}) => POST(API.homeService, data)
