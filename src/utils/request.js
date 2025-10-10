@@ -42,8 +42,8 @@ instance.interceptors.response.use(
  * @returns
  */
 export const GET = (url, params) => {
-  const { onDownloadProgress } = params || {}
-  return instance.get(url, { params }, { onDownloadProgress })
+  const { onDownloadProgress, ...queryParams } = params || {}
+  return instance.get(url, { params: queryParams, onDownloadProgress })
 }
 
 /**
