@@ -63,6 +63,8 @@ button:focus-visible {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: constant(safe-area-inset-bottom); /* 旧版 iOS */
+  padding-bottom: env(safe-area-inset-bottom); /* 新版 iOS */
 }
 
 @media (prefers-color-scheme: light) {
@@ -78,6 +80,9 @@ button:focus-visible {
   }
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;

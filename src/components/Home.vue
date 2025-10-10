@@ -9,18 +9,16 @@
     <button @click="editPiniaHandler">点击修改</button>
     <button @click="editAll">点击修改全部</button>
     <button @click="resetBtn">重置</button>
-    <button @click="saveBtn">存储到本地</button>
+    <button @click="saveBtn">存储到本地 (自动持久化)</button>
   </div>
 </template>
- 
- 
- 
- <script setup>
+
+<script setup>
 import { onMounted, ref, onBeforeMount } from "vue";
 import { storeToRefs } from "pinia"; //引入pinia转换
 
-import homeInfoStore from "../store/home";
-const homeInfo = homeInfoStore();
+import { useHomeInfoStore } from "../store/home";
+const homeInfo = useHomeInfoStore();
 
 // const { username, age, like, hobby } = homeInfo //直接结构赋值  不是响应式
 // const { username ,age, like, hobby } = toRefs(homeInfo) // 响应式
@@ -61,10 +59,10 @@ const resetBtn = () => {
   homeInfo.$reset();
 };
 const saveBtn = () => {
-  homeInfo.savePersistedState();
+  console.log("数据已自动持久化到本地存储");
+  // 现在持久化是自动的，不需要手动调用
+  // 可以通过浏览器开发者工具查看 localStorage 中的 'home-info-store' 键
 };
 </script>
- 
- 
- <style>
-</style>
+
+<style></style>

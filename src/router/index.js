@@ -1,24 +1,24 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/components/Home.vue'
-import About from '@/components/About.vue'
-import SubAbout1 from '@/components/SubAbout1.vue'
-import SubAbout2 from '@/components/SubAbout2.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "@/components/Home.vue";
+import About from "@/components/About.vue";
+import SubAbout1 from "@/components/SubAbout1.vue";
+import SubAbout2 from "@/components/SubAbout2.vue";
 
 const routes = [
-  { path: '/', component: Home },
+  { path: "/", component: Home },
   {
-    path: '/about',
+    path: "/about",
     component: About,
     children: [
-      { path: '', component: SubAbout1 },
-      { path: 'sub2', component: SubAbout2 }
-    ]
-  }
-]
+      { path: "", component: SubAbout1 },
+      { path: "sub2", component: SubAbout2 },
+    ],
+  },
+];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
-})
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
+});
 
-export default router
+export default router;
