@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/sh/Desktop/sidework/airday/AirDay/**)",
+      "Bash(npm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
