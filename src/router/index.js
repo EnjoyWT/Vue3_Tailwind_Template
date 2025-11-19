@@ -5,15 +5,29 @@ import SubAbout1 from "@/components/SubAbout1.vue";
 import SubAbout2 from "@/components/SubAbout2.vue";
 
 const routes = [
-  { path: "/", component: Home },
+  // Dashboard Layout (Header + Sidebar)
   {
-    path: "/about",
-    component: About,
+    path: "/",
+    component: () => import("@/layouts/BasicLayout.vue"),
+    redirect: "/home",
     children: [
-      { path: "", component: SubAbout1 },
-      { path: "sub2", component: SubAbout2 },
+      { path: "/home", component: Home },
+      {
+        path: "about",
+        component: About,
+        children: [
+          { path: "", component: SubAbout1 },
+          { path: "sub2", component: SubAbout2 },
+        ],
+      },
     ],
   },
+  // SPA Layout (Blank)
+  // {
+  //   path: "/landing",
+  //   component: () => import("@/layouts/BlankLayout.vue"),
+  //   children: [{ path: "", component: () => import("@/views/Landing.vue") }],
+  // },
 ];
 
 const router = createRouter({
