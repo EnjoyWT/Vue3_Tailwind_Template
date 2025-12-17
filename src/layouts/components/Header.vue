@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-between h-full px-6 bg-white border-b border-gray-200 shadow-sm"
+    class="flex items-center justify-between h-full px-6 bg-white border-b border-gray-200 shadow-xs"
   >
     <!-- Left: Logo -->
     <div

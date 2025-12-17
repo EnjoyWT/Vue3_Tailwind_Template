@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col justify-center items-center">
     <!-- state的使用 -->
     <div class="text-red-500 font-thin">
       我叫 {{ username }}，我今年 {{ age }} 岁啦, 喜欢 {{ like }}
